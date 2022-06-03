@@ -1,8 +1,7 @@
-import Link from "next/link";
 import Image from "next/image";
 import kolesaLogo from "../../public/kolesa-logo.svg";
 import style from "./Header.module.css";
-import HeaderLinks from "../HaderLinks/HeaderLinks";
+
 
 const Header = ({ topCatList }) => {
   return (
@@ -13,7 +12,11 @@ const Header = ({ topCatList }) => {
         </div>
         <div className="col-7">
           {topCatList &&
-            topCatList.map(({name, id}) => <HeaderLinks id={id} name={name} key={id}/>)}
+            topCatList.map(({ name, id }) => (
+              <Link href={`/cat/${id}`}>
+                <a className="me-2">{name}</a>
+              </Link>
+            ))}
         </div>
         <div className="col-3">
           <button className={style.btn__advertisement}>

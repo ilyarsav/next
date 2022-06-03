@@ -1,0 +1,10 @@
+.subcat__block {
+  background: #fae8bb;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.subcat__block a:hover {
+
+  color: red;
+}

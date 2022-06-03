@@ -9,7 +9,7 @@ export default function Layout({ children }) {
 
   if (error) return <div>Failed to load</div>
   if (!data) return <div>Loading...</div>
-  console.log(data);  
+  
   return (
     <>
       <Header topCatList={data}/>

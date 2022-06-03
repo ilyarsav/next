@@ -1,5 +1,5 @@
-import Header from "../../components/Header/Header";
 
+import SubCategoryList from "../../components/SubCategoryList/SubCategoryList";
 
 export async function getServerSideProps() {
   try {
@@ -15,11 +15,14 @@ export async function getServerSideProps() {
   }
 }
 
-const CategoryItem = ({subcatList}) => {
+const CategoryItem = ({ subcatList }) => {
   return (
     <>
+      <div className="container">
 
-       {/* background: #fae8bb; */}
+          <SubCategoryList subcatList={subcatList}/>
+
+      </div>
     </>
   );
 };
