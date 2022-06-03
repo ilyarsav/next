@@ -1,7 +1,7 @@
 import Image from "next/image";
 import kolesaLogo from "../../public/kolesa-logo.svg";
 import style from "./Header.module.css";
-
+import Link from "next/link";
 
 const Header = ({ topCatList }) => {
   return (

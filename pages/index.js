@@ -1,25 +1,23 @@
-import Header from "../components/Header/Header";
+import SubCategoryList from "../components/SubCategoryList/SubCategoryList";
 
-// export async function getServerSideProps() {
-//   try {
-//     const res = await fetch("http://localhost:3000/api/get-top-cat-list");
-//     const body = await res.json();
-//     return {
-//       props: {
-//         topCatList: body,
-//       },
-//     };
-//   } catch (error) {
-//     console.log("error");
-//   }
-// }
+export async function getServerSideProps() {
+  try {
+    const res = await fetch("http://localhost:3000/api/get-subcat-list");
+    const body = await res.json();
+    return {
+      props: {
+        subcatList: body,
+      },
+    };
+  } catch (error) {
+    console.log("error");
+  }
+}
 
-const Home = ({ topCatList }) => {
+const Home = ({ subcatList }) => {
   return (
     <div className="container">
-      <div className="row">
-        {/* <Header topCatList={topCatList} /> */}
-      </div>
+      <SubCategoryList subcatList={subcatList} />
     </div>
   );
 };

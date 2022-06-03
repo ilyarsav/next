@@ -1,7 +1,8 @@
 import style from './SubCategoryList.module.css'
 
+
 const SubCategoryList = ({ subcatList }) => {
-  
+
   return (
     <div className={`row ${style.subcat__block}`}>
       <div className="col">
