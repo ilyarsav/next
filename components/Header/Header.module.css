@@ -1,0 +1,27 @@
+
+
+.btn__advertisement {
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+  border: 1px solid rgba(85, 80, 82, 0.1);
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgb(28 24 25 / 10%);
+  color: #2a81dd;
+  white-space: nowrap;
+  text-decoration: none;
+  text-align: center;
+  line-height: 24px;
+  padding: 5px 16px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.btn__advertisement:hover {
+  color: red;
+  border: 1px solid rgba(85, 80, 82, 0.3);
+}
