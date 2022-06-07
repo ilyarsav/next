@@ -1,0 +1,131 @@
+
+[
+  {
+    "id": 1,
+    "name": "ГАЗ ГАЗель NEXT"
+  },
+  {
+    "id": 2,
+    "name": "ГАЗ ГАЗель"
+  },  
+  {
+    "id": 3,
+    "name": "ГАЗ Соболь"
+  },
+  {
+    "id": 4,
+    "name": "Infiniti QX80"
+  },
+  {
+    "id": 5,
+    "name": "Infiniti QX50"
+  },
+  {
+    "id": 6,
+    "name": "Mazda 6"
+  },  
+  {
+    "id": 7,
+    "name": "Mazda CX-9"
+  },
+  {
+    "id": 8,
+    "name": "Nissan X-Trail"
+  },
+  {
+    "id": 9,
+    "name": "ВАЗ (Lada) 2121 Нива"
+  },
+  {
+    "id": 10,
+    "name": "Renault Arkana"
+  },  
+  {
+    "id": 11,
+    "name": "Renault Logan"
+  },
+  {
+    "id": 12,
+    "name": "Volkswagen Polo"
+  },
+  {
+    "id": 13,
+    "name": "УАЗ Профи"
+  },  
+  {
+    "id": 14,
+    "name": "Cadillac Escalade"
+  },
+  {
+    "id": 15,
+    "name": "Porsche Taycan"
+  },
+  {
+    "id": 16,
+    "name": "Toyota Land Cruiser Prado"
+  }, 
+  {
+    "id": 17,
+    "name": "Toyota Corolla "
+  },
+  {
+    "id": 18,
+    "name": "Audi Q5"
+  },  
+  {
+    "id": 19,
+    "name": "Chevrolet Cobalt"
+  },
+  {
+    "id": 20,
+    "name": "Chevrolet Malibu"
+  },
+  {
+    "id": 21,
+    "name": "Mitsubishi L200"
+  },
+  {
+    "id": 22,
+    "name": "Mitsubishi Eclipse Cross"
+  },  
+  {
+    "id": 23,
+    "name": "Haval F7"
+  },
+  {
+    "id": 24,
+    "name": "Lexus ES 250"
+  },
+  {
+    "id": 25,
+    "name": "Lexus LX 600"
+  },
+  {
+    "id": 26,
+    "name": "JAC J7"
+  },  
+  {
+    "id": 27,
+    "name": "Subaru Forester"
+  },
+  {
+    "id": 28,
+    "name": "BMW X5"
+  },
+  {
+    "id": 29,
+    "name": "Chery Tiggo 8 Pro"
+  },  
+  {
+    "id": 30,
+    "name": "Kia Cerato"
+  },
+  {
+    "id": 31,
+    "name": "Hyundai Tucson"
+  },
+  {
+    "id": 32,
+    "name": "Mercedes-Maybach GLS 600"
+  }
+]

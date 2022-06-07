@@ -1,0 +1,9 @@
+.subcat {
+  background: #fae8bb;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: red;
+}

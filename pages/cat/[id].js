@@ -1,15 +1,31 @@
+import { AddNew } from "../../components/AddNew/AddNew";
+import HotOffers from "../../components/HotOffers/HotOffers";
+import MainContent from "../../components/MainContent/MainContent";
+import SubCategoryBlock from "../../components/SubCategoryBlock/SubCategoryBlock";
 
-import SubCategoryList from "../../components/SubCategoryList/SubCategoryList";
-
-export async function getServerSideProps({params}) {
-
+export async function getServerSideProps() {
   try {
-    const res = await fetch(`http://localhost:3000/api/get-subcat-list`);
-    const body = await res.json();
+    const cars = await fetch("http://localhost:3000/api/get-cars-list").then(
+      (res) => res.json()
+    );
+    const carsBrand = await fetch(
+      "http://localhost:3000/api/get-car-brand-list"
+    ).then((res) => res.json());
+
+    const carsModel = await fetch(
+      "http://localhost:3000/api/get-car-model-list"
+    ).then((res) => res.json());
+
+    const carsByCity = await fetch(
+      "http://localhost:3000/api/get-city-list"
+    ).then((res) => res.json());
 
     return {
       props: {
-        subcatList: body,
+        cars,
+        carsBrand,
+        carsModel,
+        carsByCity
       },
     };
   } catch (error) {
@@ -17,14 +33,14 @@ export async function getServerSideProps({params}) {
   }
 }
 
-const CategoryItem = ({ subcatList }) => {
+const CategoryItem = ({ cars, carsBrand, carsModel, carsByCity }) => {
   return (
     <>
-      <div className="container">
-        <div className="row">
-          <SubCategoryList subcatList={subcatList}/>
-          {/* background: #fae8bb; */}
-        </div>
+      <div className="container-lg">
+        <SubCategoryBlock />
+        <HotOffers cars={cars} />
+        <AddNew />
+        <MainContent carsBrand={carsBrand} carsModel={carsModel} carsByCity={carsByCity} />
       </div>
     </>
   );
