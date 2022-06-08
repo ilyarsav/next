@@ -9,8 +9,8 @@ const CarsByCityBlock = ({ carsByCity }) => {
       <div className="row">
         {carsByCity &&
           carsByCity.map(({ id, name }) => (
-            <div className="col-2">
-              <Link href="/" key={id}>
+            <div className="col-2" key={id}>
+              <Link href="/">
                 <a>{name}</a>
               </Link>
             </div>

@@ -12,8 +12,8 @@ const HotOffers = ({ cars }) => {
       </div>
       <div className="row gx-2 ">
         {cars &&
-          cars.map(({ path }) => (
-            <div className="col-auto">
+          cars.map(({ id, path }) => (
+            <div className="col-auto" key={id}>
               <Image src={path} width={120} height={90} />
             </div>
           ))}

@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { useState } from "react";
 
 const CarsByBrandBlock = ({ carsBrand }) => {
+  const [allBrands, setAllBrands] = useState(false);
+
   return (
     <div className="col-md-8">
       <div className="row">
@@ -13,18 +16,36 @@ const CarsByBrandBlock = ({ carsBrand }) => {
           </Link>
         </div>
       </div>
-      <div className="row">
-        <p>Выбор автомобиля по марке</p>
+      <div className="row mt-2">
+        <p>
+          Выбор автомобиля по марке
+          <a
+            className="ms-2"
+            style={{ cursor: "pointer" }}
+            onClick={() => setAllBrands((res) => !res)}
+          >
+            Все марки
+          </a>
+        </p>
       </div>
       <div className="row">
-        {carsBrand &&
-          carsBrand.map(({ id, name }) => (
-            <div className="col-2">
-              <Link href="/" key={id}>
-                <a>{name}</a>
-              </Link>
-            </div>
-          ))}
+        {allBrands
+          ? carsBrand &&
+            carsBrand.map(({ id, name }) => (
+              <div className="col-2" key={id}>
+                <Link href="/">
+                  <a>{name}</a>
+                </Link>
+              </div>
+            ))
+          : carsBrand &&
+            carsBrand.slice(0, 18).map(({ id, name }) => (
+              <div className="col-2" key={id}>
+                <Link href="/" >
+                  <a>{name}</a>
+                </Link>
+              </div>
+            ))}
       </div>
     </div>
   );
