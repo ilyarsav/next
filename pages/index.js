@@ -2,11 +2,10 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 const Home = () => {
-  const router = useRouter();
-  useEffect(() => {
-    router.push("/cat/1");
-  }, []);
-  return <div className="container"></div>;
+
+  return <div className="container">
+    main
+  </div>;
 };
 
 export default Home;

@@ -21,7 +21,7 @@ const SubCategoryFormDillers = () => {
   return (
     <div className={`row ${style.subcat__block}`}>
       <form>
-        <div>
+        <div className="row">
           <div className="row mb-3 mt-4">
             <div className="col-auto">
               <a className="" onClick={openModal}>
@@ -88,10 +88,12 @@ const SubCategoryFormDillers = () => {
             Искать в тексте объявлений
           </label>
         </div>
-        <div className={`p-2 ${style.subcat__button}`}>
-          <button type="submit" className="btn btn-primary">
-            Показать
-          </button>
+        <div className="row p-2 d-flex justify-content-center">
+          <div className="col-2">
+            <button type="submit" className="btn btn-primary">
+              Показать
+            </button>
+          </div>
         </div>
       </form>
     </div>

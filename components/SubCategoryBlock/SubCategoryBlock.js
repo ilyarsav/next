@@ -1,24 +1,28 @@
 import { useState } from "react";
 import SubCategoryList from "../SubCaategoryList/SubCategoryList";
 import SubCategoryFormDilers from "../SubCategoryFormDilers/SubCategoryFormDilers";
-import SubCategoryFormLightWeight from "../SubCategoryFormLightweight/SubCategoryFormLightWeight";
+import SubCategoryFormLightweight from "../SubCategoryFormLightweight/SubCategoryFormLightweight";
 import SubCategoryFormMototech from "../SubCategoryFormMototech/SubCategoryFormMototech";
+import SubCategoryFormWaterTrans from "../SubCategoryFormWaterTrans/SubCategoryFormWaterTrans";
 import style from "./SubCategoryBlock.module.css";
 
 const SubCategoryBlock = () => {
   const [clickOnDilers, setClickOnDilers] = useState(false);
   const [clickOnMototech, setClickOnMototech] = useState(false);
   const [clickOnLightweight, setClickOnLightweight] = useState(false);
+  const [clickOnWaterTrans, setClickOnWaterTrans] = useState(false);
 
   const showSubcatForm = (id) => {
     switch (id) {
       case 101:
         setClickOnDilers(false);
         setClickOnMototech(false);
+        setClickOnWaterTrans(false);
         setClickOnLightweight((res) => !res);
         break;
       case 102:
         setClickOnMototech(false);
+        setClickOnWaterTrans(false);
         setClickOnLightweight(false);
         setClickOnDilers((res) => !res);
 
@@ -26,12 +30,14 @@ const SubCategoryBlock = () => {
       case 103:
         setClickOnDilers(false);
         setClickOnLightweight(false);
+        setClickOnWaterTrans(false);
         setClickOnMototech((res) => !res);
         break;
       case 104:
         setClickOnDilers(false);
         setClickOnLightweight(false);
-        setClickOnMototech((res) => !res);
+        setClickOnMototech(false);
+        setClickOnWaterTrans((res) => !res);
         break;
       default:
         null;
@@ -45,7 +51,8 @@ const SubCategoryBlock = () => {
         <SubCategoryList showSubcatForm={showSubcatForm} />
         {clickOnDilers && <SubCategoryFormDilers />}
         {clickOnMototech && <SubCategoryFormMototech />}
-        {clickOnLightweight && <SubCategoryFormLightWeight/>}
+        {clickOnLightweight && <SubCategoryFormLightweight />}
+        {clickOnWaterTrans && <SubCategoryFormWaterTrans />}
       </div>
     </>
   );
