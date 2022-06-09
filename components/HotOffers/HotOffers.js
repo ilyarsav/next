@@ -1,4 +1,5 @@
 import Image from "next/image";
+import style from "./HotOffers.module.css";
 
 const HotOffers = ({ cars }) => {
   return (
@@ -10,11 +11,15 @@ const HotOffers = ({ cars }) => {
           </h1>
         </div>
       </div>
-      <div className="row gx-2 ">
+      <div className="row">
         {cars &&
-          cars.map(({ id, path }) => (
-            <div className="col-auto" key={id}>
-              <Image src={path} width={120} height={90} />
+          cars.map(({ id, path, city, brand }) => (
+            <div className={`col-auto ${style.cars__image__div} me-2`} key={id}>
+              <div className={style.hot__img__top__div}>{city}</div>
+              <a href={`/ad/${id}`} target="_blank">
+                <Image src={path} width={120} height={90} />
+              </a>
+              <div className={style.hot__img__bottom__div}>{brand}</div>
             </div>
           ))}
       </div>
