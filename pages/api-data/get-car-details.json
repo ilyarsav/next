@@ -1,0 +1,73 @@
+
+{
+  "name": "Toyota Camry 2007 года",
+  "price": 6300000,
+  "city": "Актау",
+  "carbody": "sedan",
+  "engineSize": "2.4",
+  "mileage": 287478,
+  "gearbox": "автомат",
+  "wheel": "слева",
+  "color": "серый металлик",
+  "drive": "передний привод",
+  "tamozhnyaVKZ": "Да",
+  "number": "+7 701 234 4678",
+  "mainImg": "/camry40.webp",
+  "imgArr": [
+    {
+      "id": 1,
+      "path": "/camry40.webp"
+    },
+    {
+      "id": 2,
+      "path": "/camry40.webp"
+    },
+    {
+      "id": 3,
+      "path": "/camry40.webp"
+    },
+    {
+      "id": 4,
+      "path": "/camry40.webp"
+    },
+    {
+      "id": 5,
+      "path": "/camry40.webp"
+    },
+    {
+      "id": 6,
+      "path": "/camry40.webp"
+    },
+    {
+      "id": 7,
+      "path": "/camry40.webp"
+    },
+    {
+      "id": 8,
+      "path": "/camry40.webp"
+    },
+    {
+      "id": 9,
+      "path": "/camry40.webp"
+    }
+    ,
+    {
+      "id": 9,
+      "path": "/camry40.webp"
+    },
+    {
+      "id": 10,
+      "path": "/camry40.webp"
+    },
+    {
+      "id": 11,
+      "path": "/camry40.webp"
+    },
+    {
+      "id": 12,
+      "path": "/camry40.webp"
+    }
+  ],
+  "available": "тонировка, спойлер, ветровики, дневные ходовые огни, противотуманки, велюр, bluetooth, USB, ГУР, ABS, SRS, зимний режим, сигнализация, центрозамок, кондиционер, мультируль, камера заднего вида, датчик света, датчик давления в шинах, налог уплачен, техосмотр пройден, вложений не требует",
+  "description": "Коропка тепейді, мотор, кузов, ходовой жақсы!"
+}

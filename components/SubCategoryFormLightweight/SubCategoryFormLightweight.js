@@ -170,6 +170,7 @@ const SubCategoryFormLightweight = () => {
               <div className="col-auto">
                 <div className={style.radio__toolbar}>
                   <input
+                    defaultChecked
                     type="radio"
                     id="radioApple"
                     name="radioFruit"
@@ -272,7 +273,7 @@ const SubCategoryFormLightweight = () => {
                   />
                 </div>
               </div>
-              <div className="row mt-2">
+              {/* <div className="row mt-2">
                 <div className="mb-3 form-check">
                   <input
                     type="checkbox"
@@ -283,8 +284,8 @@ const SubCategoryFormLightweight = () => {
                     Купить в кредит
                   </label>
                 </div>
-              </div>
-              <div className="row">
+              </div> */}
+              {/* <div className="row">
                 Первоначальный взнос
                 <div className="row p-0">
                   <div class="input-group">
@@ -321,7 +322,7 @@ const SubCategoryFormLightweight = () => {
                     />
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="row p-2 d-flex justify-content-center">

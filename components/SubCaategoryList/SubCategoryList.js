@@ -12,7 +12,7 @@ const SubCategoryList = ({ showSubcatForm }) => {
   if (!data) return <div>Loading...</div>;
 
   return (
-    <div className={`row ${style.subcat} flex-row`}>
+    <div className={`row ${style.subcat}  `}>
       {data &&
         data.map(({ id, name }) => {
           return (

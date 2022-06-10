@@ -47,13 +47,11 @@ const SubCategoryBlock = () => {
 
   return (
     <>
-      <div className="row">
-        <SubCategoryList showSubcatForm={showSubcatForm} />
-        {clickOnDilers && <SubCategoryFormDilers />}
-        {clickOnMototech && <SubCategoryFormMototech />}
-        {clickOnLightweight && <SubCategoryFormLightweight />}
-        {clickOnWaterTrans && <SubCategoryFormWaterTrans />}
-      </div>
+      <SubCategoryList showSubcatForm={showSubcatForm} />
+      {clickOnDilers && <SubCategoryFormDilers />}
+      {clickOnMototech && <SubCategoryFormMototech />}
+      {clickOnLightweight && <SubCategoryFormLightweight />}
+      {clickOnWaterTrans && <SubCategoryFormWaterTrans />}
     </>
   );
 };

@@ -20,12 +20,17 @@ export async function getServerSideProps() {
       "http://localhost:3000/api/get-city-list"
     ).then((res) => res.json());
 
+    const carsByRegion = await fetch(
+      "http://localhost:3000/api/get-region-list"
+    ).then((res) => res.json());
+
     return {
       props: {
         cars,
         carsBrand,
         carsModel,
-        carsByCity
+        carsByCity,
+        carsByRegion,
       },
     };
   } catch (error) {
@@ -33,14 +38,25 @@ export async function getServerSideProps() {
   }
 }
 
-const CategoryItem = ({ cars, carsBrand, carsModel, carsByCity }) => {
+const CategoryItem = ({
+  cars,
+  carsBrand,
+  carsModel,
+  carsByCity,
+  carsByRegion,
+}) => {
   return (
     <>
-      <div className="container-lg">
+      <div className="container">
         <SubCategoryBlock />
         <HotOffers cars={cars} />
         <AddNew />
-        <MainContent carsBrand={carsBrand} carsModel={carsModel} carsByCity={carsByCity} />
+        <MainContent
+          carsBrand={carsBrand}
+          carsModel={carsModel}
+          carsByCity={carsByCity}
+          carsByRegion={carsByRegion}
+        />
       </div>
     </>
   );

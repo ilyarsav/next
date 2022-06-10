@@ -1,11 +1,12 @@
 import CarsByBrandBlock from "../CarsByBrandBlock/CarsByBrandBlock";
 import CarsByCityBlock from "../CarsByCityBlock/CarsByCityBlock";
 import CarsByModelBlock from "../CarsByModelBlock/CarsByModelBlock";
+import CarsByRegionBlock from "../CarsByRegionBlock/CarsByRegionBlock";
 import MainAdvertising from "../MainAdvertising/MainAdvertising";
 import MainArticles from "../MainArticles/MainArticles";
 import MainNews from "../MainNews/MainNews";
 
-const MainContent = ({ carsBrand, carsModel, carsByCity }) => {
+const MainContent = ({ carsBrand, carsModel, carsByCity, carsByRegion }) => {
   return (
     <section className="main__content">
       <div className="row mt-4 gx-2">
@@ -21,7 +22,7 @@ const MainContent = ({ carsBrand, carsModel, carsByCity }) => {
         <MainAdvertising />
       </div>
       <div className="row mt-4 gx-2">
-        
+        <CarsByRegionBlock carsByRegion={carsByRegion}/>
       </div>
     </section>
   );

@@ -1,14 +1,14 @@
 import Link from "next/link";
 
-const CarsByCityBlock = ({ carsByCity }) => {
+const CarsByRegionBlock = ({ carsByRegion }) => {
   return (
     <div className="col-md-8">
       <div className="row">
         <p>Продажа автомобилей в регионах</p>
       </div>
       <div className="row">
-        {carsByCity &&
-          carsByCity.map(({ id, name }) => (
+        {carsByRegion &&
+          carsByRegion.map(({ id, name }) => (
             <div className="col-2" key={id}>
               <Link href="/">
                 <a>{name}</a>
@@ -20,4 +20,4 @@ const CarsByCityBlock = ({ carsByCity }) => {
   );
 };
 
-export default CarsByCityBlock;
+export default CarsByRegionBlock;
