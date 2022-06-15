@@ -11,6 +11,7 @@ const SubCategoryBlock = () => {
   const [clickOnMototech, setClickOnMototech] = useState(false);
   const [clickOnLightweight, setClickOnLightweight] = useState(false);
   const [clickOnWaterTrans, setClickOnWaterTrans] = useState(false);
+  
 
   const showSubcatForm = (id) => {
     switch (id) {

@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import style from "./HotOffers.module.css";
 
 const HotOffers = ({ cars }) => {

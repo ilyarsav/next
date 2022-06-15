@@ -4,7 +4,8 @@
     "id": 1,
     "brand": "Toyota",
     "city": "Астана",
-    "path": "/camry.webp"
+    "path": "/camry.webp",
+    "price": "5200000"
   },
   {
     "id": 2,
