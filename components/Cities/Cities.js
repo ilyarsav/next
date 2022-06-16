@@ -9,31 +9,56 @@ const Cities = () => {
   const [region, setRegion] = useState(null);
   const [cityInRegion, setCityInRegion] = useState(null);
 
-  const openModal = () => {
-    // if (!citiesInRegionList) {
+  const whereToSearch = () => {
+    if (region) {
+      setCitiesInRegionList((prev) => !prev);
+      setRegionList(false);
+    } else {
       setRegionList((prev) => !prev);
-    // }
-    // if (!regionList) {
-    //   setCitiesInRegionList(prev => !prev)
-    // }
+    }
+  };
+
+  const openAllRegions = () => {
+    setCitiesInRegionList(false);
+    setRegion(null);
+    setCityInRegion(null);
+    setRegionList(true);
   };
 
   const chooseCity = (id) => {
     city != id ? setCity(id) : setCity(null);
     setRegion(null);
+    setRegionList(false);
+    setCitiesInRegionList(false);
+    setCityInRegion(null);
   };
 
   const chooseRegion = (id) => {
-    // setRegionList(false);
-    // setCitiesInRegionList((prev) => !prev);
-    setRegion(id);
+    region != id ? setRegion(id) : setRegion(null);
     setCity(null);
+    setRegionList(false);
+    setCitiesInRegionList(true);
   };
 
-  // const chooseCityInRegion = (id) => {
-  //   setCityInRegion(id);
-  //   setCity(null);
-  // };
+  const chooseCityInRegion = (id) => {
+    if (cityInRegion != id) {
+      setCityInRegion(id);
+      setCitiesInRegionList(false);
+    } else {
+      setCityInRegion(null);
+    }
+  };
+
+  const onChoosenRegion = () => {
+    setRegion(null);
+    setCitiesInRegionList(false);
+  };
+
+  const onChoosenCity = () => {
+    setCityInRegion(null);
+    setRegion(null)
+
+  }
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -52,17 +77,54 @@ const Cities = () => {
   return (
     <>
       <div className="row mb-3 mt-3">
-        <div className="col-auto">
-          <a className={style.link} onClick={openModal}>
+        <div className="col-auto pe-1">
+          <a className={style.link} onClick={whereToSearch}>
             Где искать
           </a>
         </div>
         <div className="col-auto">
           <div className="row">
+            <div className="col-auto px-1">
+              {region &&
+                !cityInRegion &&
+                regions.data
+                  .filter(({ id }) => id == region)
+                  .map(({ id, name }) => {
+                    return (
+                      <a
+                        key={id}
+                        className={region === id ? style.choosen : style.link}
+                        onClick={() => {
+                          onChoosenRegion(id);
+                        }}
+                      >
+                        {name}
+                      </a>
+                    );
+                  })}
+              {cityInRegion &&
+                citiesInRegion.data
+                  .filter(({ id }) => id == cityInRegion)
+                  .map(({ id, name }) => {
+                    return (
+                      <a
+                        key={id}
+                        className={
+                          cityInRegion === id ? style.choosen : style.link
+                        }
+                        onClick={() => {
+                          onChoosenCity();
+                        }}
+                      >
+                        {name}
+                      </a>
+                    );
+                  })}
+            </div>
             {cities.data &&
               cities.data.map(({ id, name }) => {
                 return (
-                  <div className="col-auto" key={id}>
+                  <div className="col-auto px-1" key={id}>
                     <a
                       className={city === id ? style.choosen : style.link}
                       onClick={() => {
@@ -77,7 +139,7 @@ const Cities = () => {
           </div>
         </div>
         <div className="col-auto">
-          <a className={style.link} onClick={openModal}>
+          <a className={style.link} onClick={whereToSearch}>
             ещё
           </a>
         </div>
@@ -94,8 +156,7 @@ const Cities = () => {
             />
           </div>
           <div className="row d-flex justify-content-between">
-            {regions.data &&
-              regionList &&
+            {regionList &&
               regions.data.map(({ id, name }) => {
                 return (
                   <div className="col-6 my-2" key={id}>
@@ -103,6 +164,7 @@ const Cities = () => {
                       className={style.link}
                       onClick={() => {
                         chooseRegion(id);
+                        // openCitiesInRegions();
                       }}
                     >
                       {name}
@@ -114,7 +176,7 @@ const Cities = () => {
         </div>
       )}
 
-      {/* {citiesInRegionList && (
+      {citiesInRegionList && (
         <div className="row mb-3">
           <div className="row">
             <input
@@ -124,12 +186,39 @@ const Cities = () => {
               placeholder="Найти регион, например Салават"
             />
           </div>
+          <div className="row">
+            <div className="col-auto">
+              <a className={style.link} onClick={openAllRegions}>
+                Все регионы
+              </a>
+              <span className="mx-2">{">"}</span>
+              {regions.data
+                .filter(({ id }) => id == region)
+                .map(({ id, name }) => {
+                  return (
+                    <a
+                    key={id}
+                      className={
+                        !cityInRegion && region === id
+                          ? style.choosen__region
+                          : style.link
+                      }
+                      // onClick={() => {
+                      //   chooseRegion(id);
+                      // }}
+                    >
+                      {name}
+                    </a>
+                  );
+                })}
+            </div>
+          </div>
           <div className="row d-flex justify-content-between">
             {citiesInRegion.data.map(({ id, name }) => {
               return (
                 <div className="col-6 my-2" key={id}>
                   <a
-                    className={style.link}
+                    className={cityInRegion === id ? style.choosen : style.link}
                     onClick={() => {
                       chooseCityInRegion(id);
                     }}
@@ -141,7 +230,7 @@ const Cities = () => {
             })}
           </div>
         </div>
-      )} */}
+      )}
     </>
   );
 };

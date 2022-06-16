@@ -3,11 +3,13 @@ import { useState } from "react";
 import style from "./SubCategoryFormWaterTrans.module.css";
 import SubCategoryButton from "../SubCategoryButton/SubCategoryButton";
 import Cities from "../Cities/Cities";
+import PriceInputGroup from "../PriceInputGroup/PriceInputGroup";
 
 const SubCategoryFormWaterTrans = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [motoType, setMotoType] = useState(null);
   const [inputValue, setInputValue] = useState("");
+  const [priceInputGroup, setPriceInputGroup] = useState(null);
 
   const checkHandler = () => {
     setIsChecked((prev) => !prev);
@@ -19,6 +21,14 @@ const SubCategoryFormWaterTrans = () => {
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
+  };
+
+  const onPriceInputChange = (inputFromValue, inputToValue) => {
+    setPriceInputGroup((state) => ({
+      ...state,
+      from: inputFromValue,
+      to: inputToValue,
+    }));
   };
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -96,25 +106,7 @@ const SubCategoryFormWaterTrans = () => {
       </div>
 
       <div className="col-4">
-        <div className="row mt-3">
-          Цена
-          <div className="row p-0">
-            <div class="input-group">
-              <input
-                type="text"
-                aria-label="First name"
-                class="form-control"
-                placeholder="от"
-              />
-              <input
-                type="text"
-                aria-label="Last name"
-                class="form-control"
-                placeholder="до"
-              />
-            </div>
-          </div>
-        </div>
+        <PriceInputGroup onPriceInputChange={onPriceInputChange} />
       </div>
 
       <SubCategoryButton />

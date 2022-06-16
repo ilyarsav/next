@@ -1,3 +1,4 @@
+
 .link {
   cursor: pointer;
 }
@@ -17,5 +18,17 @@
 }
 
 .choosen:hover {
+  color: black;
+}
+
+.choosen__region {
+  cursor: default;
+  color: black;
+  background-color: rgb(255, 213, 96);
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+.choosen__region:hover {
   color: black;
 }

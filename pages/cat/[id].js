@@ -47,16 +47,16 @@ const CategoryItem = ({
 }) => {
   return (
     <>
-      <div className="container">
+      <div className="container-lg p-4">
         <SubCategoryBlock />
         <HotOffers cars={cars} />
         <AddNew />
-        <MainContent
+        {/* <MainContent
           carsBrand={carsBrand}
           carsModel={carsModel}
           carsByCity={carsByCity}
           carsByRegion={carsByRegion}
-        />
+        /> */}
       </div>
     </>
   );

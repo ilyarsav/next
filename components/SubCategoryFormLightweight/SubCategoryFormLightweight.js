@@ -4,6 +4,8 @@ import { useState } from "react";
 import SubCategoryButton from "../SubCategoryButton/SubCategoryButton";
 import Cities from "../Cities/Cities";
 import Check from "../Check/Check";
+import YearInputGroup from "../YearInputGroup/YearInputGroup";
+import PriceInputGroup from "../PriceInputGroup/PriceInputGroup";
 
 const SubCategoryFormLightweight = () => {
   const [brandsList, setBrandsList] = useState(false);
@@ -13,6 +15,14 @@ const SubCategoryFormLightweight = () => {
   const [model, setModel] = useState(null);
   const [selectedOption, setSelectedOption] = useState("All");
   const [checkedItems, setCheckedItems] = useState({});
+  const [yearInputGroup, setYearInputGroup] = useState(null);
+  const [priceInputGroup, setPriceInputGroup] = useState(null);
+
+  const checkbox = [
+    { label: "С фото", name: "withPhoto" },
+    { label: "Растаможен", name: "rastamozhen" },
+    { label: "Аварийная/Не на ходу", name: "emergency" },
+  ];
 
   const openBrands = () => {
     setBrandsList((res) => !res);
@@ -54,6 +64,30 @@ const SubCategoryFormLightweight = () => {
     }));
   };
 
+  const onYearInputChange = (inputFromValue, inputToValue) => {
+    setYearInputGroup((state) => ({
+      ...state,
+      from: inputFromValue,
+      to: inputToValue,
+    }));
+  };
+
+  const onPriceInputChange = (inputFromValue, inputToValue) => {
+    setPriceInputGroup((state) => ({
+      ...state,
+      from: inputFromValue,
+      to: inputToValue,
+    }));
+  };
+
+  // const onPriceInputChange = (inputFromValue, inputToValue) => {
+  //   setPriceInputGroup((state) => ({
+  //     ...state,
+  //     from: inputFromValue,
+  //     to: inputToValue,
+  //   }));
+  // };
+
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
   const brands = useSWR(
@@ -72,6 +106,7 @@ const SubCategoryFormLightweight = () => {
     <form>
       <div className={`row ${style.subcat__block}`}>
         <div className="col-md-8">
+          
           <Cities />
 
           <div className="row mb-3 mt-4">
@@ -200,160 +235,96 @@ const SubCategoryFormLightweight = () => {
           </div>
 
           <div className="row mt-3">
-            <Check
-              label="С фото"
-              name="withPhoto"
-              onCheckChange={onCheckChange}
-            />
-            <Check
-              label="Растаможен"
-              name="rastamozhen"
-              onCheckChange={onCheckChange}
-            />
-            <Check
-              label="Аварийная/Не на ходу"
-              name="emergency"
-              onCheckChange={onCheckChange}
-            />
-
-            {/* <div className="col-auto">
-              <div className="mb-3 form-check">
-                <input
-                  type="checkbox"
-                  className="form-check-input"
-                  id="exampleCheck1"
-                  checked={isChecked}
-                  onChange={checkHandler}
-                />
-                <label className="form-check-label" htmlFor="exampleCheck1">
-                  С фото
-                </label>
-              </div>
-            </div>
-            <div className="col-auto">
-              <div className="mb-3 form-check">
-                <input
-                  type="checkbox"
-                  className="form-check-input"
-                  id="exampleCheck1"
-                  checked={isChecked}
-                  onChange={checkHandler}
-                />
-                <label className="form-check-label" htmlFor="exampleCheck1">
-                  Растаможен
-                </label>
-              </div>
-            </div>
-            <div className="col-auto">
-              <div className="mb-3 form-check">
-                <input
-                  type="checkbox"
-                  className="form-check-input"
-                  id="exampleCheck1"
-                  checked={isChecked}
-                  onChange={checkHandler}
-                />
-                <label className="form-check-label" htmlFor="exampleCheck1">
-                  Аварийная/Не на ходу
-                </label>
-              </div>
-            </div> */}
+            {checkbox.map(({ label, name }, index) => (
+              <Check
+                label={label}
+                name={name}
+                onCheckChange={onCheckChange}
+                key={index}
+              />
+            ))}
           </div>
         </div>
 
         <div className="col-md-4">
-          <div className="row mt-3">
-            <label htmlFor="year[from]">Год выпуска</label>
+          {/* <div className="row mt-2 mb-3">
+            <label htmlFor="from" className="px-0 pb-1">
+              {label}
+            </label>
             <div className="row p-0">
               <div className="input-group">
                 <input
-                  id="year[from]"
+                  id="from"
+                  name="from"
                   type="number"
                   className="form-control"
                   placeholder="от"
                   min="1900"
                   max="2022"
+                  value={inputFromValue}
+                  onChange={(e) => {
+                    onInputFromChange(e);
+                  }}
                 />
                 <input
-                  id="year[to]"
+                  id="to"
+                  name="to"
                   type="number"
                   className="form-control"
                   placeholder="до"
                   min="1900"
                   max="2022"
+                  value={inputToValue}
+                  onChange={(e) => {
+                    onInputToChange(e);
+                  }}
                 />
               </div>
             </div>
           </div>
-          <div className="row mt-3">
-            Цена
+          <div className="row mt-2 mb-3">
+            <label htmlFor="from" className="px-0 pb-1">
+              {label}
+            </label>
             <div className="row p-0">
               <div className="input-group">
                 <input
-                  type="text"
-                  aria-label="First name"
+                  id="from"
+                  name="from"
+                  type="number"
                   className="form-control"
                   placeholder="от"
+                  min="1900"
+                  max="2022"
+                  value={inputFromValue}
+                  onChange={(e) => {
+                    onInputFromChange(e);
+                  }}
                 />
                 <input
-                  type="text"
-                  aria-label="Last name"
+                  id="to"
+                  name="to"
+                  type="number"
                   className="form-control"
                   placeholder="до"
+                  min="1900"
+                  max="2022"
+                  value={inputToValue}
+                  onChange={(e) => {
+                    onInputToChange(e);
+                  }}
                 />
               </div>
             </div>
-            {/* <div className="row mt-2">
-                <div className="mb-3 form-check">
-                  <input
-                    type="checkbox"
-                    className="form-check-input"
-                    id="exampleCheck1"
-                  />
-                  <label className="form-check-label" htmlFor="exampleCheck1">
-                    Купить в кредит
-                  </label>
-                </div>
-              </div> */}
-            {/* <div className="row">
-                Первоначальный взнос
-                <div className="row p-0">
-                  <div class="input-group">
-                    <input
-                      type="text"
-                      aria-label="First name"
-                      class="form-control"
-                      placeholder="от"
-                    />
-                    <input
-                      type="text"
-                      aria-label="Last name"
-                      class="form-control"
-                      placeholder="до"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="row mt-3">
-                Ежемесячный платеж
-                <div className="row p-0">
-                  <div class="input-group">
-                    <input
-                      type="text"
-                      aria-label="First name"
-                      class="form-control"
-                      placeholder="от"
-                    />
-                    <input
-                      type="text"
-                      aria-label="Last name"
-                      class="form-control"
-                      placeholder="до"
-                    />
-                  </div>
-                </div>
-              </div> */}
-          </div>
+          </div> */}
+          {/* <GroupInput
+            label="Год выпуска"
+            onYearInputChange={onYearInputChange}
+          />
+          <GroupInput label="Цена" /> */}
+
+          <YearInputGroup onYearInputChange={onYearInputChange} />
+          <PriceInputGroup onPriceInputChange={onPriceInputChange} />
         </div>
 
         <SubCategoryButton />

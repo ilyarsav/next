@@ -3,13 +3,16 @@ import { useState } from "react";
 import style from "./SubCategoryFormMototech.module.css";
 import SubCategoryButton from "../SubCategoryButton/SubCategoryButton";
 import Cities from "../Cities/Cities";
+import YearInputGroup from "../YearInputGroup/YearInputGroup";
+import PriceInputGroup from "../PriceInputGroup/PriceInputGroup";
 
 const SubCategoryFormMototech = () => {
   const [brandsList, setBrandsList] = useState(false);
   const [motoBrand, setMotoBrand] = useState(false);
   const [motoType, setMotoType] = useState(null);
   const [isChecked, setIsChecked] = useState(false);
-
+  const [yearInputGroup, setYearInputGroup] = useState(null);
+  const [priceInputGroup, setPriceInputGroup] = useState(null);
 
   const openBrands = () => {
     setBrandsList((res) => !res);
@@ -27,6 +30,21 @@ const SubCategoryFormMototech = () => {
     setIsChecked((prev) => !prev);
   };
 
+  const onYearInputChange = (inputFromValue, inputToValue) => {
+    setYearInputGroup((state) => ({
+      ...state,
+      from: inputFromValue,
+      to: inputToValue,
+    }));
+  };
+
+  const onPriceInputChange = (inputFromValue, inputToValue) => {
+    setPriceInputGroup((state) => ({
+      ...state,
+      from: inputFromValue,
+      to: inputToValue,
+    }));
+  };
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -136,7 +154,7 @@ const SubCategoryFormMototech = () => {
       </div>
 
       <div className="col-md-4">
-        <div className="row mt-3">
+        {/* <div className="row mt-3">
           Год выпуска
           <div className="row p-0">
             <div class="input-group">
@@ -155,7 +173,6 @@ const SubCategoryFormMototech = () => {
             </div>
           </div>
         </div>
-
         <div className="row mt-3">
           Цена
           <div className="row p-0">
@@ -174,7 +191,9 @@ const SubCategoryFormMototech = () => {
               />
             </div>
           </div>
-        </div>
+        </div> */}
+        <YearInputGroup onYearInputChange={onYearInputChange} />
+        <PriceInputGroup onPriceInputChange={onPriceInputChange} />
       </div>
 
       <SubCategoryButton />
