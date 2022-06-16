@@ -106,7 +106,6 @@ const SubCategoryFormLightweight = () => {
     <form>
       <div className={`row ${style.subcat__block}`}>
         <div className="col-md-8">
-          
           <Cities />
 
           <div className="row mb-3 mt-4">
@@ -247,85 +246,13 @@ const SubCategoryFormLightweight = () => {
         </div>
 
         <div className="col-md-4">
-          {/* <div className="row mt-2 mb-3">
-            <label htmlFor="from" className="px-0 pb-1">
-              {label}
-            </label>
-            <div className="row p-0">
-              <div className="input-group">
-                <input
-                  id="from"
-                  name="from"
-                  type="number"
-                  className="form-control"
-                  placeholder="от"
-                  min="1900"
-                  max="2022"
-                  value={inputFromValue}
-                  onChange={(e) => {
-                    onInputFromChange(e);
-                  }}
-                />
-                <input
-                  id="to"
-                  name="to"
-                  type="number"
-                  className="form-control"
-                  placeholder="до"
-                  min="1900"
-                  max="2022"
-                  value={inputToValue}
-                  onChange={(e) => {
-                    onInputToChange(e);
-                  }}
-                />
-              </div>
-            </div>
-          </div>
-          <div className="row mt-2 mb-3">
-            <label htmlFor="from" className="px-0 pb-1">
-              {label}
-            </label>
-            <div className="row p-0">
-              <div className="input-group">
-                <input
-                  id="from"
-                  name="from"
-                  type="number"
-                  className="form-control"
-                  placeholder="от"
-                  min="1900"
-                  max="2022"
-                  value={inputFromValue}
-                  onChange={(e) => {
-                    onInputFromChange(e);
-                  }}
-                />
-                <input
-                  id="to"
-                  name="to"
-                  type="number"
-                  className="form-control"
-                  placeholder="до"
-                  min="1900"
-                  max="2022"
-                  value={inputToValue}
-                  onChange={(e) => {
-                    onInputToChange(e);
-                  }}
-                />
-              </div>
-            </div>
-          </div> */}
-          {/* <GroupInput
-            label="Год выпуска"
-            onYearInputChange={onYearInputChange}
-          />
-          <GroupInput label="Цена" /> */}
-
           <YearInputGroup onYearInputChange={onYearInputChange} />
           <PriceInputGroup onPriceInputChange={onPriceInputChange} />
         </div>
+{/* 
+        <div className="row mt-3">
+          <a className={style.link}>Расширенный поиск</a>
+        </div> */}
 
         <SubCategoryButton />
       </div>

@@ -3,22 +3,37 @@ import kolesaLogo from "../../public/kolesa-logo.svg";
 import style from "./Header.module.css";
 import Link from "next/link";
 
-const Header = ({ topCatList }) => {
+const Header = () => {
   return (
     <div className="container">
-      <div className="row justify-content-between align-items-center mb-4">
-        <div className="col-2 p-0">
+      <div className="row justify-content-between align-items-center">
+        <div className="col-2">
           <Image src={kolesaLogo} width={165} height={50}></Image>
         </div>
         <div className="col-7">
-          {topCatList &&
+          <Link href="/cars">
+            <a className="me-3">Машины</a>
+          </Link>
+          <Link href="/equipments">
+            <a className="me-3">Запчасти</a>
+          </Link>
+          <Link href="/services">
+            <a className="me-3">Ремонт и услуги</a>
+          </Link>
+          <Link href="/commercial">
+            <a className="me-3">Коммерческие</a>
+          </Link>
+          <Link href="/other">
+            <a className="me-3">Прочее</a>
+          </Link>
+          {/* {topCatList &&
             topCatList.map(({ name, id }) => (
               <Link href={`/cat/${id}`} key={id}>
                 <a className="me-3">{name}</a>
               </Link>
-            ))}
+            ))} */}
         </div>
-        <div className="col-auto p-0">
+        <div className="col-auto">
           <button className={style.btn__advertisement}>
             Подать объявление
           </button>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export const AddNew = () => {
+const AddNew = () => {
   return (
     <section className="add__new">
       <div className="row mt-5">
@@ -13,3 +13,5 @@ export const AddNew = () => {
     </section>
   );
 };
+
+export default AddNew;
