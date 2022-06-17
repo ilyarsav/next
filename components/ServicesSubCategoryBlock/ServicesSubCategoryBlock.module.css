@@ -1,0 +1,27 @@
+.subcat {
+  background: #fae8bb;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.link:hover {
+  color: red;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.choosen {
+  cursor: pointer;
+  color: black;
+  background-color: rgb(255, 213, 96);
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+.choosen:hover {
+  color: black;
+}

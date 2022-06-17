@@ -1,19 +1,13 @@
-import style from "./CarsSubCategoryList.module.css";
+import style from "./OtherSubCategoryList.module.css";
 import useSWR from "swr";
 import { useState } from "react";
 
-const CarsSubCategoryList = ({ showSubcatForm }) => {
+const OtherSubCategoryList = () => {
   const [active, setActive] = useState(null);
-
-  const clickingListItem = (id) => {
-    showSubcatForm(id);
-
-    active === id ? setActive(null) : setActive(id);
-  };
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error } = useSWR(
-    `http://localhost:3000/api/get-cars-subcat-list`,
+    `http://localhost:3000/api/get-other-subcat-list`,
     fetcher
   );
 
@@ -27,8 +21,8 @@ const CarsSubCategoryList = ({ showSubcatForm }) => {
           return (
             <div className="col-auto" key={id}>
               <a
-                className={active === id ? style.active : style.link}
-                onClick={() => clickingListItem(id)}
+                className={style.active}
+                // onClick={() => clickingListItem(id)}
               >
                 {name}
               </a>
@@ -39,4 +33,4 @@ const CarsSubCategoryList = ({ showSubcatForm }) => {
   );
 };
 
-export default CarsSubCategoryList;
+export default OtherSubCategoryList;

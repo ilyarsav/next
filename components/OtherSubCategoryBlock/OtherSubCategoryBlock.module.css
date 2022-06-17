@@ -1,0 +1,26 @@
+
+.subcat__block {
+  background-color: #fff8e6;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.link:hover {
+  color: red;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.choosen {
+  cursor: pointer;
+  color: black;
+  background-color: rgb(255, 213, 96);
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+.choosen:hover {
+  color: black;
+}

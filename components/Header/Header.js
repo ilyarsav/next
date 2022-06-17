@@ -11,7 +11,7 @@ const Header = () => {
           <Image src={kolesaLogo} width={165} height={50}></Image>
         </div>
         <div className="col-8">
-          <Link href="/cars">
+          <Link href="/">
             <a className="me-3">Машины</a>
           </Link>
           <Link href="/equipments">

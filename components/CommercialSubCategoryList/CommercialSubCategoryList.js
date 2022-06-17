@@ -1,19 +1,22 @@
-import style from "./CarsSubCategoryList.module.css";
+import style from "./CommercialSubCategoryList.module.css";
 import useSWR from "swr";
 import { useState } from "react";
 
-const CarsSubCategoryList = ({ showSubcatForm }) => {
+const CommercialSubCategoryList = ({ showSubcatForm }) => {
   const [active, setActive] = useState(null);
 
   const clickingListItem = (id) => {
     showSubcatForm(id);
 
-    active === id ? setActive(null) : setActive(id);
+    if (active === id) {
+      setActive(null);
+    } else {
+      setActive(id);
+    }
   };
-
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error } = useSWR(
-    `http://localhost:3000/api/get-cars-subcat-list`,
+    `http://localhost:3000/api/get-commercial-subcat-list`,
     fetcher
   );
 
@@ -39,4 +42,4 @@ const CarsSubCategoryList = ({ showSubcatForm }) => {
   );
 };
 
-export default CarsSubCategoryList;
+export default CommercialSubCategoryList;

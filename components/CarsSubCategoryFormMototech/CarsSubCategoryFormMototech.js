@@ -57,8 +57,8 @@ const CarsSubCategoryFormMototech = () => {
     fetcher
   );
 
-  if (motoTypes.error) return <div>Failed to load</div>;
-  if (!motoTypes.data) return <div>Loading...</div>;
+  if (motoTypes.error || brands.error) return <div>Failed to load</div>;
+  if (!motoTypes.data || !brands.data) return <div>Loading...</div>;
 
   return (
     <div className={`row ${style.subcat__block}`}>
