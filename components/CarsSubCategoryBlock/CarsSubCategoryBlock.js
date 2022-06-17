@@ -1,17 +1,16 @@
 import { useState } from "react";
-import SubCategoryList from "../SubCaategoryList/SubCategoryList";
-import SubCategoryFormDilers from "../SubCategoryFormDilers/SubCategoryFormDilers";
-import SubCategoryFormLightweight from "../SubCategoryFormLightweight/SubCategoryFormLightweight";
-import SubCategoryFormMototech from "../SubCategoryFormMototech/SubCategoryFormMototech";
-import SubCategoryFormWaterTrans from "../SubCategoryFormWaterTrans/SubCategoryFormWaterTrans";
-import style from "./SubCategoryBlock.module.css";
+import CarsSubCategoryList from "../CarsSubCategoryList/CarsSubCategoryList";
+import CarsSubCategoryFormDilers from "../CarsSubCategoryFormDilers/CarsSubCategoryFormDilers";
+import CarsSubCategoryFormLightweight from "../CarsSubCategoryFormLightweight/CarsSubCategoryFormLightweight";
+import CarsSubCategoryFormMototech from "../CarsSubCategoryFormMototech/CarsSubCategoryFormMototech";
+import CarsSubCategoryFormWaterTrans from "../CarsSubCategoryFormWaterTrans/CarsSubCategoryFormWaterTrans";
+import style from "./CarsSubCategoryBlock.module.css";
 
-const SubCategoryBlock = () => {
+const CarsSubCategoryBlock = () => {
   const [clickOnDilers, setClickOnDilers] = useState(false);
   const [clickOnMototech, setClickOnMototech] = useState(false);
   const [clickOnLightweight, setClickOnLightweight] = useState(false);
   const [clickOnWaterTrans, setClickOnWaterTrans] = useState(false);
-  
 
   const showSubcatForm = (id) => {
     switch (id) {
@@ -48,13 +47,13 @@ const SubCategoryBlock = () => {
 
   return (
     <>
-      <SubCategoryList showSubcatForm={showSubcatForm} />
-      {clickOnDilers && <SubCategoryFormDilers />}
-      {clickOnMototech && <SubCategoryFormMototech />}
-      {clickOnLightweight && <SubCategoryFormLightweight />}
-      {clickOnWaterTrans && <SubCategoryFormWaterTrans />}
+      <CarsSubCategoryList showSubcatForm={showSubcatForm} />
+      {clickOnDilers && <CarsSubCategoryFormDilers />}
+      {clickOnMototech && <CarsSubCategoryFormMototech />}
+      {clickOnLightweight && <CarsSubCategoryFormLightweight />}
+      {clickOnWaterTrans && <CarsSubCategoryFormWaterTrans />}
     </>
   );
 };
 
-export default SubCategoryBlock;
+export default CarsSubCategoryBlock;

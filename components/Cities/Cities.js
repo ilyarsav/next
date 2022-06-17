@@ -57,7 +57,7 @@ const Cities = () => {
   const onChoosenCity = () => {
     setCityInRegion(null);
     setRegion(null)
-
+    setCitiesInRegionList(false)
   }
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());

@@ -1,7 +1,7 @@
 
 import AddNew from "../components/AddNew/AddNew";
 import HotOffers from "../components/HotOffers/HotOffers";
-import SubCategoryBlock from "../components/SubCategoryBlock/SubCategoryBlock";
+import CarsSubCategoryBlock from "../components/CarsSubCategoryBlock/CarsSubCategoryBlock";
 
 export async function getServerSideProps() {
   try {
@@ -38,7 +38,7 @@ export async function getServerSideProps() {
   }
 }
 
-const CategoryItem = ({
+const Cars = ({
   cars,
   // carsBrand,
   // carsModel,
@@ -48,7 +48,7 @@ const CategoryItem = ({
   return (
     <>
       <div className="container-lg p-4">
-        <SubCategoryBlock />
+        <CarsSubCategoryBlock />
         <HotOffers cars={cars} />
         <AddNew />
         {/* <MainContent
@@ -62,4 +62,4 @@ const CategoryItem = ({
   );
 };
 
-export default CategoryItem;
+export default Cars;

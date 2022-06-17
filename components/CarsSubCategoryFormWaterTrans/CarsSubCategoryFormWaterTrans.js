@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import { useState } from "react";
-import style from "./SubCategoryFormWaterTrans.module.css";
+import style from "./CarsSubCategoryFormWaterTrans.module.css";
 import SubCategoryButton from "../SubCategoryButton/SubCategoryButton";
 import Cities from "../Cities/Cities";
 import PriceInputGroup from "../PriceInputGroup/PriceInputGroup";

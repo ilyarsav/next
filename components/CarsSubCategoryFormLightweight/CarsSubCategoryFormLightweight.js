@@ -1,4 +1,4 @@
-import style from "./SubCategoryFormLightweight.module.css";
+import style from "./CarsSubCategoryFormLightweight.module.css";
 import useSWR from "swr";
 import { useState } from "react";
 import SubCategoryButton from "../SubCategoryButton/SubCategoryButton";
@@ -7,7 +7,7 @@ import Check from "../Check/Check";
 import YearInputGroup from "../YearInputGroup/YearInputGroup";
 import PriceInputGroup from "../PriceInputGroup/PriceInputGroup";
 
-const SubCategoryFormLightweight = () => {
+const CarsSubCategoryFormLightweight = () => {
   const [brandsList, setBrandsList] = useState(false);
   const [modelsList, setModelsList] = useState(false);
   const [showModels, setShowModels] = useState(false);
@@ -259,4 +259,4 @@ const SubCategoryFormLightweight = () => {
     </form>
   );
 };
-export default SubCategoryFormLightweight;
+export default CarsSubCategoryFormLightweight;

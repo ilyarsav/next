@@ -1,5 +1,4 @@
-import style from "./SubCategoryFormDilers.module.css";
-import useSWR from "swr";
+import style from "./CarsSubCategoryFormDilers.module.css";
 import { useState } from "react";
 import Cities from "../Cities/Cities";
 import SubCategoryButton from "../SubCategoryButton/SubCategoryButton";

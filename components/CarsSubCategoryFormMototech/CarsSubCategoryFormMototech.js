@@ -1,12 +1,12 @@
 import useSWR from "swr";
 import { useState } from "react";
-import style from "./SubCategoryFormMototech.module.css";
+import style from "./CarsSubCategoryFormMototech.module.css";
 import SubCategoryButton from "../SubCategoryButton/SubCategoryButton";
 import Cities from "../Cities/Cities";
 import YearInputGroup from "../YearInputGroup/YearInputGroup";
 import PriceInputGroup from "../PriceInputGroup/PriceInputGroup";
 
-const SubCategoryFormMototech = () => {
+const CarsSubCategoryFormMototech = () => {
   const [brandsList, setBrandsList] = useState(false);
   const [motoBrand, setMotoBrand] = useState(false);
   const [motoType, setMotoType] = useState(null);
@@ -201,4 +201,4 @@ const SubCategoryFormMototech = () => {
   );
 };
 
-export default SubCategoryFormMototech;
+export default CarsSubCategoryFormMototech;

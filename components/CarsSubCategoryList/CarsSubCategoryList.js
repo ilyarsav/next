@@ -1,8 +1,8 @@
-import style from "./SubCategoryList.module.css";
+import style from "./CarsSubCategoryList.module.css";
 import useSWR from "swr";
 import { useState } from "react";
 
-const SubCategoryList = ({ showSubcatForm }) => {
+const CarsSubCategoryList = ({ showSubcatForm }) => {
   const [active, setActive] = useState(null);
 
   const clickingListItem = (id) => {
@@ -16,7 +16,7 @@ const SubCategoryList = ({ showSubcatForm }) => {
   };
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error } = useSWR(
-    `http://localhost:3000/api/get-subcat-list1`,
+    `http://localhost:3000/api/get-cars-subcat-list`,
     fetcher
   );
 
@@ -39,4 +39,4 @@ const SubCategoryList = ({ showSubcatForm }) => {
   );
 };
 
-export default SubCategoryList;
+export default CarsSubCategoryList;

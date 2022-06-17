@@ -10,7 +10,7 @@ const Header = () => {
         <div className="col-2">
           <Image src={kolesaLogo} width={165} height={50}></Image>
         </div>
-        <div className="col-7">
+        <div className="col-8">
           <Link href="/cars">
             <a className="me-3">Машины</a>
           </Link>
@@ -26,12 +26,6 @@ const Header = () => {
           <Link href="/other">
             <a className="me-3">Прочее</a>
           </Link>
-          {/* {topCatList &&
-            topCatList.map(({ name, id }) => (
-              <Link href={`/cat/${id}`} key={id}>
-                <a className="me-3">{name}</a>
-              </Link>
-            ))} */}
         </div>
         <div className="col-auto">
           <button className={style.btn__advertisement}>

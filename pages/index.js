@@ -4,7 +4,7 @@ import { useEffect } from "react";
 const Home = () => {
   const router = useRouter();
   useEffect(() => {
-    router.push("/cat/1");
+    router.push("/cars");
   }, []);
   return <div className="container"></div>;
 };
